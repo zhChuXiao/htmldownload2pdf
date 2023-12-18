@@ -9,7 +9,6 @@ import JsPDF from 'jspdf'
  * @example printOut(document.getElementById('app')!, 'test')
  */
 export function printOut(el: HTMLElement, fileName: string) {
-  console.log(111)
   var shareContent = el //需要截图的包裹的（原生的）DOM 对象
   var width = shareContent.offsetWidth //获取dom 宽度
   var height = shareContent.offsetHeight //获取dom 高度
@@ -50,12 +49,9 @@ export function printOut(el: HTMLElement, fileName: string) {
   })
 }
 
-export function demo(num: number): number {
-  return num
-}
-function htmldownload2pdf(app: typeof Vue2): void
-function htmldownload2pdf(app: App<Element>): void
-function htmldownload2pdf(app: typeof Vue2 | App<Element>) {
+export function htmldownload2pdf(app: typeof Vue2): void
+export function htmldownload2pdf(app: App<Element>): void
+export function htmldownload2pdf(app: typeof Vue2 | App<Element>) {
   app.directive('exportpdf', (el: HTMLElement, binding: any) => {
     const dom = document.getElementById(binding.value.el)
     el.addEventListener('click', () => {
@@ -65,4 +61,19 @@ function htmldownload2pdf(app: typeof Vue2 | App<Element>) {
     })
   })
 }
-export default htmldownload2pdf
+// export default htmldownload2pdf
+export default {
+  install(app: typeof Vue2 | App<Element>) {
+    app.directive('exportpdf', (el: HTMLElement, binding: any) => {
+      app.nextTick(() => {
+        const dom = document.getElementById(binding.value.el)
+        console.log(dom)
+        el.addEventListener('click', () => {
+          if (dom) {
+            printOut(dom, binding.value.name)
+          }
+        })
+      })
+    })
+  }
+}

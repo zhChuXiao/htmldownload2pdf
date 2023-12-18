@@ -7,7 +7,9 @@ import { Vue2, App } from 'vue-demi';
  * @example printOut(document.getElementById('app')!, 'test')
  */
 export declare function printOut(el: HTMLElement, fileName: string): void;
-export declare function demo(num: number): number;
-declare function htmldownload2pdf(app: typeof Vue2): void;
-declare function htmldownload2pdf(app: App<Element>): void;
-export default htmldownload2pdf;
+export declare function htmldownload2pdf(app: typeof Vue2): void;
+export declare function htmldownload2pdf(app: App<Element>): void;
+declare const _default: {
+    install(app: typeof Vue2 | App<Element>): void;
+};
+export default _default;

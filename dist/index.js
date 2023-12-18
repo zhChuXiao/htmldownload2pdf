@@ -1,1 +1,1 @@
-export{h as default,d as demo,p as printOut}from"./index-0247c7c2.js";
+export{i as default,h as htmldownload2pdf,p as printOut}from"./index-bdd131d6.js";
