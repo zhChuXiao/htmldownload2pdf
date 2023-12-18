@@ -66,7 +66,7 @@ export default {
   install(app: typeof Vue2 | App<Element>) {
     app.directive('exportpdf', (el: HTMLElement, binding: any) => {
       app.nextTick(() => {
-        const dom = document.getElementById(binding.value.el)
+        const dom = document.querySelector(binding.value.el)
         console.log(dom)
         el.addEventListener('click', () => {
           if (dom) {

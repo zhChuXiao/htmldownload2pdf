@@ -38,7 +38,7 @@ app.use(htmldownload2pdf).mount('#app')
 >
 | 参数 | 值 |
 | --- | --- |
-| el  | 要导出的元素dom的id，注意不要带井号  | 
+| el  | 要导出为pdf的元素dom的选择器，比如：#box .box | 
 | name  | 导出下载的文件名称  | 
 > 
 > **例：**
@@ -48,7 +48,7 @@ app.use(htmldownload2pdf).mount('#app')
     内容......
 </div>
 <!-- 点击按钮即可导出名字为《文件名称》的pdf文件，内容就是上方div渲染的内容 -->
-<button v-exportpdf="{el: 'container', name: '文件名称'}"></button>
+<button v-exportpdf="{el: '#container', name: '文件名称'}"></button>
 ```
 
 ## 除了自定义指令的使用方式，也可以通过工具导出的printOut函数实现
