@@ -3,9 +3,6 @@
 <!-- <img src="https://img.shields.io/badge/-JavaScript-oringe?style=flat-square&logo=javascript" /> -->
 <p align="center">
 <span > 
-<a href="https://github.com/zhChuXiao/htmldownload2pdf" target="_blank">
-<img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt="github" />
-</a>
 <img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/t/zhChuXiao/htmldownload2pdf">
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/zhChuXiao/htmldownload2pdf?logoColor=%235dbfa2&color=%235dbfa2">
 <a href="https://github.com/zhChuXiao/htmldownload2pdf"><img alt="GitHub top language" src="https://img.shields.io/badge/zhChuXiao-%E5%88%9D%E6%99%93-green?style=social&logo=github"></a>
@@ -19,6 +16,7 @@
 
 
 借助了两个插件二次封装实现一键将HTML原生转为pdf并导出，通过将html元素转换成canvas，再将canvas转换成pdf下载，可以直接使用自定义指令的方式点击下载，工具还导出了一个printOut的函数，可以自己决定在什么时机调用，更灵活的进行下载。
+> 已发布到npm，可直接通过npm进行安装
 
 > 安装
 
