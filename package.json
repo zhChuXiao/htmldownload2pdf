@@ -1,7 +1,7 @@
 {
   "name": "htmldownload2pdf",
   "author": "chuxiao",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "typings": "./dist/index.d.ts",
   "main": "./dist/index.min.js",
   "module": "./dist/index.esm.js",
@@ -27,12 +27,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:zhChuXiao/htmldownload2pdf.git"
+    "url": "https://github.com/zhChuXiao/htmldownload2pdf"
   },
   "bugs": {
-    "url": "git@github.com:zhChuXiao/htmldownload2pdf/issues"
+    "url": "https://github.com/zhChuXiao/htmldownload2pdf/issues"
   },
-  "homepage": "git@github.com:zhChuXiao/htmldownload2pdf",
+  "homepage": "https://github.com/zhChuXiao/htmldownload2pdf",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.1",
     "@rollup/plugin-typescript": "^11.1.0",
