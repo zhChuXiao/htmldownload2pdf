@@ -1,16 +1,16 @@
 {
   "name": "htmldownload2pdf",
   "author": "chuxiao",
-  "version": "0.1.5",
+  "version": "0.2.1",
   "typings": "./dist/index.d.ts",
-  "main": "./dist/index.min.js",
-  "module": "./dist/index.esm.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.min.js",
-      "require": "./dist/index.esm.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
   "files": [
@@ -34,11 +34,15 @@
   },
   "homepage": "https://github.com/zhChuXiao/htmldownload2pdf",
   "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
     "@rollup/plugin-terser": "^0.4.1",
     "@rollup/plugin-typescript": "^11.1.0",
     "@types/vue": "^2.0.0",
     "rollup": "^3.21.5",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "tslib": "^2.5.0"
   },
   "dependencies": {

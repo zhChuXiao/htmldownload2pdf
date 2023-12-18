@@ -1,20 +1,20 @@
-import typescript from "@rollup/plugin-typescript";
-import terser from "@rollup/plugin-terser";
-import del from "rollup-plugin-delete";
-
-export default {
-  input: "./src/index.ts",
-  output: [
-    {
-      file: "./dist/index.min.js",
-      format: "umd",
-      name: "svgZoomDragVueDirectives",
-      exports: "named",
+import typescript from '@rollup/plugin-typescript'
+import terser from '@rollup/plugin-terser'
+import del from 'rollup-plugin-delete'
+import resolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
+export default [
+  {
+    input: './src/index.ts',
+    output: {
+      dir: 'dist',
+      //   file: './dist/index.esm.js',
+      format: 'esm',
+      globals: {
+        html2Canvas: 'html2Canvas',
+        jspdf: 'jspdf'
+      }
     },
-    {
-      file: "./dist/index.esm.js",
-      format: "esm",
-    },
-  ],
-  plugins: [typescript(), del({ targets: "dist/*" }), terser()],
-};
+    plugins: [resolve(), commonjs(), typescript(), del({ targets: 'dist/*' }), terser()]
+  }
+]

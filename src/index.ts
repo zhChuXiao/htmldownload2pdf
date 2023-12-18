@@ -1,4 +1,4 @@
-import { Vue2, App } from "vue-demi";
+import { Vue2, App } from 'vue-demi'
 import html2Canvas, { Options } from 'html2canvas'
 import JsPDF from 'jspdf'
 /**
@@ -9,6 +9,7 @@ import JsPDF from 'jspdf'
  * @example printOut(document.getElementById('app')!, 'test')
  */
 export function printOut(el: HTMLElement, fileName: string) {
+  console.log(111)
   var shareContent = el //需要截图的包裹的（原生的）DOM 对象
   var width = shareContent.offsetWidth //获取dom 宽度
   var height = shareContent.offsetHeight //获取dom 高度
@@ -47,6 +48,10 @@ export function printOut(el: HTMLElement, fileName: string) {
       doc.save(fileName + '.pdf')
     }
   })
+}
+
+export function demo(num: number): number {
+  return num
 }
 function htmldownload2pdf(app: typeof Vue2): void
 function htmldownload2pdf(app: App<Element>): void

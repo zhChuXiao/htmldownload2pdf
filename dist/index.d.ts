@@ -1,4 +1,4 @@
-import { Vue2, App } from "vue-demi";
+import { Vue2, App } from 'vue-demi';
 /**
  *
  * @param el 需要截图的包裹的（原生的）DOM 对象
@@ -7,6 +7,7 @@ import { Vue2, App } from "vue-demi";
  * @example printOut(document.getElementById('app')!, 'test')
  */
 export declare function printOut(el: HTMLElement, fileName: string): void;
+export declare function demo(num: number): number;
 declare function htmldownload2pdf(app: typeof Vue2): void;
 declare function htmldownload2pdf(app: App<Element>): void;
 export default htmldownload2pdf;
