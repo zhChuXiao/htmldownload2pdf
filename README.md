@@ -15,7 +15,7 @@
 </div>
 
 
-借助了两个插件二次封装实现一键将HTML原生转为pdf并导出，通过将html元素转换成canvas，再将canvas转换成pdf下载，可以直接使用自定义指令的方式点击下载，工具还导出了一个printOut的函数，可以自己决定在什么时机调用，更灵活的进行下载。
+借助了两个插件html2canvas，jspdf二次封装实现自定义指令的方式，一键将HTML元素转为pdf并导出，通过将html元素转换成canvas，再将canvas转换成pdf下载，可以直接使用自定义指令的方式点击下载，工具还导出了一个printOut的函数，可以自己决定在什么时机调用，更灵活的进行下载。
 > 已发布到npm，可直接通过npm进行安装
 
 > 安装
@@ -54,7 +54,7 @@ app.use(htmldownload2pdf).mount('#app')
 >
 | 参数 | 值 |
 | --- | --- |
-| el  | 要导出为pdf的dom的选择器，可书写任意css选择器，比如：#box .box | 
+| el  | 要导出为pdf的dom的选择器，可书写任意css选择器，比如：#box .box  | 
 | name  | 导出下载的文件名称，不需要带后缀名.pdf  | 
 > 
 > **例：**
@@ -70,13 +70,17 @@ app.use(htmldownload2pdf).mount('#app')
 ## 除了自定义指令的使用方式，也可以通过工具导出的printOut函数实现
 
  > 直接调用函数的方式不需要在main.js注册，直接导入就能使用
+ >
+ > 第一个参数传入dom元素，可以通过原生js的方式获取，也可以直接通过ref的方式
 
  ``` js
 import { printOut } from 'htmldownload2pdf'
-
-btn.onClick = () => {
-    printOut(document.getElementById('box'), '文件名称')
-}
+import { ref, onMounted } from 'vue'
+const divRef = ref<HTMLDivElement | null>(null)
+onMounted(() => {
+    // printOut(document.getElementById('box'), '文件名称')
+    printOut(divRef.value, '文件名称')
+})
  ```
 
 
