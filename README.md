@@ -16,12 +16,18 @@
 
 
 借助了两个插件html2canvas，jspdf二次封装实现自定义指令的方式，一键将HTML元素转为pdf并导出，通过将html元素转换成canvas，再将canvas转换成pdf下载，可以直接使用自定义指令的方式点击下载，工具还导出了一个printOut的函数，可以自己决定在什么时机调用，更灵活的进行下载。
-> 已发布到npm，可直接通过npm进行安装
+### 已发布到npm，可直接通过npm进行安装
+- github：[https://github.com/zhChuXiao/htmldownload2pdf](https://github.com/zhChuXiao/htmldownload2pdf)
+- npm：[https://www.npmjs.com/package/htmldownload2pdf](https://www.npmjs.com/package/htmldownload2pdf)
 
-> 安装
+
+
+### 安装
 
 ```shell
 npm install htmldownload2pdf
+#或者
+yarn add htmldownload2pdf
 ```
 
 > 使用方式
