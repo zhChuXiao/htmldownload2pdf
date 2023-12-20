@@ -64,16 +64,21 @@ export function htmldownload2pdf(app: typeof Vue2 | App<Element>) {
 // export default htmldownload2pdf
 export default {
   install(app: typeof Vue2 | App<Element>) {
-    app.directive('exportpdf', (el: HTMLElement, binding: any) => {
-      app.nextTick(() => {
-        const dom = document.querySelector(binding.value.el)
-        console.log(dom)
-        el.addEventListener('click', () => {
-          if (dom) {
-            printOut(dom, binding.value.name)
-          }
-        })
+    const init = (el: HTMLElement, binding: any) => {
+      const dom = document.querySelector(binding.value.el)
+      el.addEventListener('click', () => {
+        if (dom) {
+          printOut(dom, binding.value.name)
+        }
       })
+    }
+    app.directive('exportpdf', {
+      inserted(el: HTMLElement, binding: any) {
+        init(el, binding)
+      },
+      mounted(el: HTMLElement, binding: any) {
+        init(el, binding)
+      }
     })
   }
 }
