@@ -27,6 +27,9 @@ npm install htmldownload2pdf
 > 使用方式
 - 在main.js或者main.ts里导入并use
 >
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/2c2cc48759204eaeaf554b8fa62c6a02.png)
+
 ```js
 // vue2 ↓
 import Vue from 'vue';
@@ -47,6 +50,7 @@ const app = createApp(App)
 app.use(htmldownload2pdf).mount('#app')
 
 ```
+
 > **在组件内直接给按钮绑定指令: v-exportpdf，点击按钮即可下载**
 >
 
@@ -59,6 +63,7 @@ app.use(htmldownload2pdf).mount('#app')
 > 
 > **例：**
 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/797660ec6cbd4a1a83784aa5479ea91f.png)
 ```html
 <div id="container">
     内容......
@@ -66,12 +71,14 @@ app.use(htmldownload2pdf).mount('#app')
 <!-- 点击按钮即可导出名字为《文件名称》的pdf文件，内容就是上方div渲染的内容 -->
 <button v-exportpdf="{el: '#container', name: '文件名称'}"></button>
 ```
+![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/3ea1d12ffa6741538bdfa4f3780d039d.png)
 
 ## 除了自定义指令的使用方式，也可以通过工具导出的printOut函数实现
 
  > 直接调用函数的方式不需要在main.js注册，直接导入就能使用
  >
  > 第一个参数传入dom元素，可以通过原生js的方式获取，也可以直接通过ref的方式
+ ### ` 注意：ref要绑在原生dom上，组件外层套一个div即可`
 
  ``` js
 import { printOut } from 'htmldownload2pdf'
@@ -83,5 +90,5 @@ onMounted(() => {
 })
  ```
 
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/7238cc05996f47a3b270452fbb8a563e.png)
 
